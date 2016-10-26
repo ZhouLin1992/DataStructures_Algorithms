@@ -1,6 +1,5 @@
 public class Solution {
-	int[] arr;
-	public void merge(int left, int mid, int right) {
+	public static void merge(int[] arr, int left, int mid, int right) {
 		// array length of first and second half
 		// first half arr[left, mid]
 		// second half arr[mid + 1, right]
@@ -22,7 +21,7 @@ public class Solution {
 		while (l < len1 && r < len2) {
 			if (L[l] < R[r]) {
 				arr[p] = L[l];
-				l++
+				l++;
 			} else {
 				arr[p] = R[r];
 				r++;
@@ -44,14 +43,14 @@ public class Solution {
 	} 
 
 
-	public int sort(int left, int right) {
+	public static void sort(int[] arr, int left, int right) {
 		if (left < right) {
 			int mid = (left + right) / 2;
 
-			sort(left, mid);
-			sort(mid + 1, right);
+			sort(arr, left, mid);
+			sort(arr, mid + 1, right);
 
-			merge(left, mid, right);
+			merge(arr, left, mid, right);
 		}
 	}
 }
